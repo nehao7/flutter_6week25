@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
 
 void main() {
@@ -114,7 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>UiComponents()));
-            }, child: Text("Screen 2"))
+            }, child: Text("Screen 2")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ExpandedRowScreen()));
+            }, child: Text("Expanded Row"))
           ],
         ),
       ),

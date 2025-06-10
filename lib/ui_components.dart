@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/app_bar_features.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class UiComponents extends StatefulWidget {
@@ -104,10 +105,9 @@ class _UiComponentsState extends State<UiComponents> {
                         onPressed:
                             () => {
                           Fluttertoast.showToast(msg: "This is my flutter toast"),
-
-
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>AppBarFeatures()))
                         },
-                        child: Text("Show Toast and Dialog"),
+                        child: Text("Appbar Screen"),
                       ),
                       SizedBox(width: 10),
                       Text("Elevated Button"),
@@ -119,7 +119,7 @@ class _UiComponentsState extends State<UiComponents> {
                     children: [
                       OutlinedButton(
                         onPressed:
-                            () => {
+                            ()=>{
                           if (_controller.text.isEmpty)
                             {
                               ScaffoldMessenger.of(context).showSnackBar(
