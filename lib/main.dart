@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/ButtonTypesScreen.dart';
+import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
 
@@ -113,12 +115,42 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>UiComponents()));
-            }, child: Text("Screen 2")),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ExpandedRowScreen()));
-            }, child: Text("Expanded Row"))
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UiComponents()),
+                );
+              },
+              child: Text("Screen 2"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ExpandedRowScreen()),
+                );
+              },
+              child: Text("Expanded Row"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TextProperties_Widgets()),
+                );
+              },
+              child: Text("Text Widgets & Properties"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ButtonTypesScreen()),
+                );
+              },
+              child: Text("Button Types"),
+            ),
           ],
         ),
       ),
