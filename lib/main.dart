@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
+import 'package:flutter_6week25/DataPassingScreen.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
@@ -60,6 +61,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String returnedData = 'No data yet';
 
   void _incrementCounter() {
     setState(() {
@@ -70,6 +72,22 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+  }
+
+  void navigateAndReceiveData() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DataPassingScreen(mydata: 'Hello from First Screen'),
+      ),
+    );
+
+    // Update state with returned data
+    if (result != null) {
+      setState(() {
+        returnedData = result;
+      });
+    }
   }
 
   @override
@@ -150,6 +168,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: Text("Button Types"),
+            ),
+            SizedBox(height: 10),
+            Text('Returned Data: $returnedData'),
+            SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: navigateAndReceiveData,
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => DataPassingScreen(mydata: "Hello from first screen",)),
+                // );
+
+              child: Text("Data Passing"),
             ),
           ],
         ),
