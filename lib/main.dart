@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
+import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
@@ -181,6 +183,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 // );
 
               child: Text("Data Passing"),
+            ),
+            SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BottomSheetSpacerAlignScreen()));
+              },
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => DataPassingScreen(mydata: "Hello from first screen",)),
+                // );
+
+              child: Text("BottomSheet Screen"),
+            ),
+            SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MyFormFields()));
+              },
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => DataPassingScreen(mydata: "Hello from first screen",)),
+                // );
+
+              child: Text("Form Fields Screen"),
             ),
           ],
         ),
