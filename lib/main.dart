@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/BottomNavigationColmRow.dart';
 import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
+import 'package:flutter_6week25/DrawerLayoutScreen.dart';
+import 'package:flutter_6week25/DropdownMenu2dArray.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
@@ -190,10 +193,6 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => BottomSheetSpacerAlignScreen()));
               },
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => DataPassingScreen(mydata: "Hello from first screen",)),
-                // );
 
               child: Text("BottomSheet Screen"),
             ),
@@ -203,12 +202,29 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => MyFormFields()));
               },
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => DataPassingScreen(mydata: "Hello from first screen",)),
-                // );
 
               child: Text("Form Fields Screen"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DropdownMenu2dArray()));
+              },
+
+              child: Text("Dropdown Menu 2d Array"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerLayoutScreen()));
+              },
+
+              child: Text("Drawer Layout"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationColmRow()));
+              },
+
+              child: Text("Bottom Navigation with Row & Column"),
             ),
           ],
         ),
