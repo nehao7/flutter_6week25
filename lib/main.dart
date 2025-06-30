@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/BottomNavBarWithBarItems.dart';
 import 'package:flutter_6week25/BottomNavigationColmRow.dart';
 import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
+import 'package:flutter_6week25/DateTimePickerScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +44,16 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      locale: const Locale('hi'), // If using a custom locale
+      supportedLocales: const [
+        Locale('en'),
+        Locale('hi'), // Add more if needed
+      ],
+      localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -225,6 +238,20 @@ class _MyHomePageState extends State<MyHomePage> {
               },
 
               child: Text("Bottom Navigation with Row & Column"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavbarWithBarItems()));
+              },
+
+              child: Text("Bottom Navigation & Tab items"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DatetimePickerScreen()));
+              },
+
+              child: Text("Date Picker"),
             ),
           ],
         ),
