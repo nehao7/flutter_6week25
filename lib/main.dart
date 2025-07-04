@@ -3,10 +3,14 @@ import 'package:flutter_6week25/BottomNavBarWithBarItems.dart';
 import 'package:flutter_6week25/BottomNavigationColmRow.dart';
 import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
+import 'package:flutter_6week25/CameraAndGalleryAcessScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
 import 'package:flutter_6week25/DateTimePickerScreen.dart';
+import 'package:flutter_6week25/DragAndZoomScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
+import 'package:flutter_6week25/GestureDetectorScreen.dart';
+import 'package:flutter_6week25/ListViewWithCustomScroll.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
@@ -126,7 +130,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body:SingleChildScrollView(
+      child: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -253,8 +258,37 @@ class _MyHomePageState extends State<MyHomePage> {
 
               child: Text("Date Picker"),
             ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CameraAndGalleryAcessScreen()));
+              },
+
+              child: Text("Gallery & Camera access"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => GestureDetectorScreen()));
+              },
+
+              child: Text("Gesture Detector"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DragAndZoomScreen()));
+              },
+
+              child: Text("Drag Screen"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewWithCustomScroll()));
+              },
+
+              child: Text("List view Crud"),
+            ),
           ],
         ),
+      ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
