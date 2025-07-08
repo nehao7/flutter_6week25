@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_6week25/BottomNavBarWithBarItems.dart';
 import 'package:flutter_6week25/BottomNavigationColmRow.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_6week25/DateTimePickerScreen.dart';
 import 'package:flutter_6week25/DragAndZoomScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
+import 'package:flutter_6week25/FirestoreListCrud.dart';
 import 'package:flutter_6week25/GestureDetectorScreen.dart';
+import 'package:flutter_6week25/GridViewScreen.dart';
 import 'package:flutter_6week25/ListViewWithCustomScroll.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
@@ -17,7 +20,13 @@ import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -285,6 +294,20 @@ class _MyHomePageState extends State<MyHomePage> {
               },
 
               child: Text("List view Crud"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => GridViewScreen()));
+              },
+
+              child: Text("Grid view"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FireStoreListCrud()));
+              },
+
+              child: Text("Firestore CRUD"),
             ),
           ],
         ),
