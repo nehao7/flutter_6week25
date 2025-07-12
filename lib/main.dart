@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_6week25/LoginScreen.dart';
+import 'package:flutter_6week25/RegisterScreen.dart';
 import 'package:flutter_6week25/BottomNavBarWithBarItems.dart';
 import 'package:flutter_6week25/BottomNavigationColmRow.dart';
 import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
@@ -7,12 +9,12 @@ import 'package:flutter_6week25/ButtonTypesScreen.dart';
 import 'package:flutter_6week25/CameraAndGalleryAcessScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
 import 'package:flutter_6week25/DateTimePickerScreen.dart';
-import 'package:flutter_6week25/DragAndZoomScreen.dart';
+// import 'package:flutter_6week25/DragAndZoomScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
 import 'package:flutter_6week25/FirestoreListCrud.dart';
 import 'package:flutter_6week25/GestureDetectorScreen.dart';
-import 'package:flutter_6week25/GridViewScreen.dart';
+// import 'package:flutter_6week25/GridViewScreen.dart';
 import 'package:flutter_6week25/ListViewWithCustomScroll.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
@@ -281,13 +283,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
               child: Text("Gesture Detector"),
             ),
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DragAndZoomScreen()));
-              },
-
-              child: Text("Drag Screen"),
-            ),
+            // ElevatedButton(
+            //   onPressed: (){
+            //     Navigator.push(context, MaterialPageRoute(builder: (context) => DragAndZoomScreen()));
+            //   },
+            //
+            //   child: Text("Drag Screen"),
+            // ),
             ElevatedButton(
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewWithCustomScroll()));
@@ -297,16 +299,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => GridViewScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
               },
 
-              child: Text("Grid view"),
+              child: Text("Register Screen"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
+
+              child: Text("Login Screen"),
             ),
             ElevatedButton(
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => FireStoreListCrud()));
               },
-
               child: Text("Firestore CRUD"),
             ),
           ],
