@@ -17,7 +17,10 @@ import 'package:flutter_6week25/GestureDetectorScreen.dart';
 // import 'package:flutter_6week25/GridViewScreen.dart';
 import 'package:flutter_6week25/ListViewWithCustomScroll.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
+import 'package:flutter_6week25/SliverAppBarScreen.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
+import 'package:flutter_6week25/ToDoApp.dart';
+import 'package:flutter_6week25/ZoomScreen.dart';
 import 'package:flutter_6week25/expandedrowscreen.dart';
 import 'package:flutter_6week25/ui_components.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -317,6 +320,26 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("Firestore CRUD"),
             ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SliverAppBarScreen()));
+              },
+
+              child: Text("Sliver Appbar"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ZoomScreen()));
+              },
+              child: Text("Zoom Screen"),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoApp()));
+              },
+              child: Text("SQFLite ToDoApp"),
+            ),
+
           ],
         ),
       ),
