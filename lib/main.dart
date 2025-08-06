@@ -1,22 +1,27 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_6week25/LoginScreen.dart';
-import 'package:flutter_6week25/RegisterScreen.dart';
 import 'package:flutter_6week25/BottomNavBarWithBarItems.dart';
 import 'package:flutter_6week25/BottomNavigationColmRow.dart';
 import 'package:flutter_6week25/BottomSheetSpacerAlignScreen.dart';
 import 'package:flutter_6week25/ButtonTypesScreen.dart';
 import 'package:flutter_6week25/CameraAndGalleryAcessScreen.dart';
+import 'package:flutter_6week25/CloudinaryStorageScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
 import 'package:flutter_6week25/DateTimePickerScreen.dart';
 // import 'package:flutter_6week25/DragAndZoomScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
+import 'package:flutter_6week25/EntryAnimationGrid.dart';
 import 'package:flutter_6week25/FirestoreListCrud.dart';
 import 'package:flutter_6week25/GestureDetectorScreen.dart';
+import 'package:flutter_6week25/GridViewScreen.dart';
 // import 'package:flutter_6week25/GridViewScreen.dart';
 import 'package:flutter_6week25/ListViewWithCustomScroll.dart';
+import 'package:flutter_6week25/LoginScreen.dart';
+import 'package:flutter_6week25/MultipleGridAnimation.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
+import 'package:flutter_6week25/QRGeneratorScreen.dart';
+import 'package:flutter_6week25/RegisterScreen.dart';
 import 'package:flutter_6week25/SliverAppBarScreen.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/ToDoApp.dart';
@@ -77,8 +82,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -90,6 +97,7 @@ class MyHomePage extends StatefulWidget {
   // always marked "final".
 
   final String title;
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -338,6 +346,46 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ToDoApp()));
               },
               child: Text("SQFLite ToDoApp"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => QrGeneratorScreen()));
+              },
+              child: Text("QR Code Generator"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => GridViewScreen()));
+              },
+              child: Text("Grid View"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => EntryAnimationGrid()));
+              },
+              child: Text("Entry Animation Grid"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => MultipleGridAnimation()));
+              },
+              child: Text("Multiple Grid Animation"),
+            ),
+ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => CloudinaryStorageScreen()));
+              },
+              child: Text("Cloudinary Image Upload"),
             ),
 
           ],
