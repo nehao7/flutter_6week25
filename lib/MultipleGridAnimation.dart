@@ -89,7 +89,8 @@ class _AnimatedGridItemState extends State<AnimatedGridItem> with SingleTickerPr
         color: Colors.blue[widget.number * 100 + 100],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Center(child: Text(widget.number.toString(), style: TextStyle(fontSize: 24, color: Colors.white))),
+      child:
+      Center(child: Text(widget.number.toString(), style: TextStyle(fontSize: 24, color: Colors.white))),
     );
 
     switch (widget.animationType) {
