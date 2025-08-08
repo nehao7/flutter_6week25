@@ -53,6 +53,7 @@ dependencies:
   mime: ^2.0.0
   path: ^1.9.1
   cloudinary_public: ^0.23.1
+  shared_preferences: ^2.5.3
 #  flutter_localization: ^0.3.3
 
 dev_dependencies:

@@ -8,6 +8,7 @@ import 'package:flutter_6week25/CameraAndGalleryAcessScreen.dart';
 import 'package:flutter_6week25/CloudinaryStorageScreen.dart';
 import 'package:flutter_6week25/DataPassingScreen.dart';
 import 'package:flutter_6week25/DateTimePickerScreen.dart';
+import 'package:flutter_6week25/DragAndDropScreen.dart';
 // import 'package:flutter_6week25/DragAndZoomScreen.dart';
 import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
@@ -22,6 +23,7 @@ import 'package:flutter_6week25/MultipleGridAnimation.dart';
 import 'package:flutter_6week25/MyFormFields.dart';
 import 'package:flutter_6week25/QRGeneratorScreen.dart';
 import 'package:flutter_6week25/RegisterScreen.dart';
+import 'package:flutter_6week25/SharedPrefrencesScreen.dart';
 import 'package:flutter_6week25/SliverAppBarScreen.dart';
 import 'package:flutter_6week25/TextProperties_Widgets.dart';
 import 'package:flutter_6week25/ToDoApp.dart';
@@ -77,7 +79,8 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: ListWithDataClass(),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -379,13 +382,29 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("Multiple Grid Animation"),
             ),
-ElevatedButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(
                         builder: (context) => CloudinaryStorageScreen()));
               },
               child: Text("Cloudinary Image Upload"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => DragAndDropScreen()));
+              },
+              child: Text("Drag-Drop Screen"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => SharedPrefrencesScreen()));
+              },
+              child: Text("SharedPref Screen"),
             ),
 
           ],
