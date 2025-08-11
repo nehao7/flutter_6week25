@@ -14,6 +14,7 @@ import 'package:flutter_6week25/DrawerLayoutScreen.dart';
 import 'package:flutter_6week25/DropdownMenu2dArray.dart';
 import 'package:flutter_6week25/EntryAnimationGrid.dart';
 import 'package:flutter_6week25/FirestoreListCrud.dart';
+import 'package:flutter_6week25/Geolocator/CurrentLocation.dart';
 import 'package:flutter_6week25/GestureDetectorScreen.dart';
 import 'package:flutter_6week25/GridViewScreen.dart';
 // import 'package:flutter_6week25/GridViewScreen.dart';
@@ -80,7 +81,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       // home: ListWithDataClass(),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: CurrentLocation(),
     );
   }
 }

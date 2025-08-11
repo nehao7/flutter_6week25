@@ -45,5 +45,18 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- For when the app is in use (most common for Flutter apps) -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to your location to provide location-based features.</string>
+
+    <!-- Optional: For background location access (only if needed) -->
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app needs access to your location even in the background to provide continuous location tracking.</string>
+
+    <!-- Optional: For older iOS versions -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app needs access to your location to function properly.</string>
+
 </dict>
 </plist>

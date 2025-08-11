@@ -30,7 +30,7 @@ class _CurrentLocationState extends State<CurrentLocation> {
       if (mounted) {
         // Update the UI with the fetched location using setState.
         setState(() {
-          _locationMessage = "Latitude: ${position.latitude}, Longitude: ${position.longitude}";
+          _locationMessage = "Latitude: ${position.latitude}, Longitude: ${position.longitude} ";
         });
       }
 
@@ -55,7 +55,6 @@ class _CurrentLocationState extends State<CurrentLocation> {
     bool serviceEnabled;
     LocationPermission permission;
 
-    // changing boolean variable value if location is enabled
     // isLocationServiceEnabled gives us boolean value
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
 
@@ -80,14 +79,13 @@ class _CurrentLocationState extends State<CurrentLocation> {
       }
     }
 
-    // Handle the case where permissions are permanently denied.
+    // Handling the case where permissions are permanently denied.
     if (permission == LocationPermission.deniedForever) {
       return Future.error(
           'Location permissions are permanently denied. We cannot request permissions. You will need to enable them manually from the app settings.');
     }
 
-    // If all checks pass and permissions are granted, get the current position.
-    // You can specify desiredAccuracy for better precision or battery efficiency.
+    // If all checks pass and permissions are granted, getting the current position
     Position currentPosition = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high, // Use high accuracy for better results.
       timeLimit: const Duration(seconds: 10), // Set a timeout for the location request.
